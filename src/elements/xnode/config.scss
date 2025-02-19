@@ -1,0 +1,101 @@
+// -- QUERIES ------------------------------------------- //
+
+// -- config                                           -- //
+$media-nano: 360px; // 360px
+$media-mini: 576px; // 576px
+$media-lite: 768px; // 768px
+$media-plus: 992px; // 992px
+$media-full: 1262px; // 1262px
+$media-wide: 1440px; // 1440px
+$media-mega: 1560px; // 1560px
+$media-over: 1760px; // 1760px
+
+
+// -- PALETTE ------------------------------------------- //
+:root {
+   --color-black: #000000;
+   --color-white: #FFFFFF;
+
+   --color-body-bg: #000000;
+   --color-selection: #7119E7;
+   --color-overlay: rgba(0, 0, 0, 0.45);
+
+   --color-text: #F8F8F9;
+   --color-title: #272829;
+
+   --color-gray-01: #B5B5B6;
+   --color-gray-02: #A1A1A3;
+   --color-gray-03: #4A4B4C;
+
+   --color-accent: #7119E7;
+
+   --color-telegram: #24A1DE;
+   --color-whatsapp: #25D366;
+}
+
+
+// -- FONTS --------------------------------------------- //
+:root {
+   --font-family-main: 'JetBrains Mono', sans-serif;
+   --font-family-title: 'JetBrains Mono', sans-serif;
+   --font-family-code: 'Courier New', monospace;
+
+   --line-height-main: 1.5;
+   --line-height-title: 1.2;
+
+   --font-size-hint: 13px;
+   --font-size-main: 15px;
+   --font-size-desc: 18px;
+   --font-size-spec: 18px;
+
+   --font-size-head-1: 24px;
+   --font-size-head-2: 24px;
+   --font-size-head-3: 20px;
+   --font-size-head-4: 16px;
+}
+
+// -- extra                                            -- //
+$fweight-main: 400;
+$fweight-head-bold: 700;
+$fweight-main-bold: 700;
+
+$fweight-code: 400;
+$fweight-code-bold: 700;
+
+$lspacing-head: 0;
+$lspacing-main: 0;
+
+
+// -- ASSIST -------------------------------------------- //
+
+// -- interaction                                      -- //
+$button-base: 40px;
+$button-mini: 32px; // not used
+$button-plus: 52px; // not used
+
+$input-base: 40px;
+$input-mini: 32px; // not used
+$input-plus: 52px; // not used
+
+$check-width: 16px; // not used
+$check-height: 16px; // not used
+
+// -- different                                        -- //
+$radius-base: 0; // not used
+$radius-mini: 0; // not used
+$radius-plus: 0; // not used
+
+$trans-text: all 0.15s;
+$trans-main: all 0.3s;
+
+// -- xnode                                        -- //
+$xn-ffamily: var(--font-family-main);
+$xn-ffamily-mono: var(--font-family-code);
+
+$xn-lheight: var(--line-height-main);
+$xn-fsize: var(--font-size-main);
+$xn-fweight: $fweight-main;
+$xn-fweight-bold: $fweight-main-bold;
+
+$xn-text-color: var(--color-text);
+$xn-text-spacing: $lspacing-main;

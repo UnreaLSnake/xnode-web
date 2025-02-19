@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='en' prefix='og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# {%
+   if openGraph == "article"
+      %}article: https://ogp.me/ns/article#{%
+   else
+      %}website: https://ogp.me/ns/website#{%
+   endif
+%}'>
+
+   {% from 'elements/xnode/icons/icons.njk' import icon with context %}
+   {% from 'elements/xnode/buttons/buttons.njk' import button with context %}
+   {% from 'elements/xnode/checks/checks.njk' import check with context %}
+   {% from 'elements/xnode/headers/headers.njk' import header with context %}
+
+   {% from 'elements/carcass/project-logo/project-logo.njk' import projectLogo %}
+
+   <head>
+      <meta charset='UTF-8'>
+      <!-- <base href='https://sitename.com/'> -->
+      <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+
+      <!--general /-->
+      <title>{{ pageTitle }} – SiteName</title>
+      <meta name='description' content='{{ pageDesc }}'>
+      <meta name='robots' content='index, follow'>
+      <meta name='apple-mobile-web-app-title' content='{{ pageTitle }} – SiteName'>
+      <meta name='theme-color' content='#000000'>
+
+      {% if openGraph == 'disable' %}
+      {% else %}
+
+         <!--og-global /-->
+         <meta property='og:site_name' content='Snake`s Nexus'>
+         <meta property='og:locale' content='en'>
+         <meta property='og:url' content=''>
+         <meta property='og:type' content='{{ openGraph }}'>
+         <meta property='og:title' content='{{ pageTitle }} – SiteName'>
+         <meta property='og:description' content='{{ pageDesc }}'>
+
+         <!--og-image /-->
+         <meta property='og:image' content=''>
+         <meta property='og:image:secure_url' content=''>
+         <meta property='og:image:type' content='image/jpeg'>
+         <meta property='og:image:width' content='1800'>
+         <meta property='og:image:height' content='1200'>
+         <meta property='og:image:alt' content=''>
+
+         {# <!--og-profile /--> #}
+         {# <meta property='profile:username' content=''> #}
+         {# <meta property='profile:gender' content=''> #}
+         {# <meta property='profile:first_name' content=''> #}
+         {# <meta property='profile:last_name' content=''> #}
+
+         {# <!--og-facebook /--> #}
+         {# <meta property='fb:profile_id' content=''> #}
+
+         {# <!--twitter-card /--> #}
+         {# <meta name='twitter:card' content='summary'> #}
+         {# <meta name='twitter:app' content='@username'> #}
+
+      {% endif %}
+
+      <!--styles /-->
+      <link rel='stylesheet' href='/src/styles.scss'>
+      <link rel='manifest' href='/assets/sitename.webmanifest'>
+
+      <!--canonical /-->
+      <link rel='canonical' href='/'>
+      {# <link rel='first' href='/'> #}
+      {# <link rel='prev' href='/'> #}
+      {# <link rel='next' href='/'> #}
+      {# <link rel='last' href='/'> #}
+
+      <!--preconnect /-->
+      {# <link rel='preconnect' href='/'> #}
+
+      <!--favicons /-->
+      <link rel='icon' href='/assets/a-icons/favicon-32.png' sizes='32x32'>
+      <link rel='icon' href='/assets/a-icons/favicon-96.png' sizes='96x96'>
+      <link rel='icon' href='/assets/a-icons/favicon-16.png' sizes='16x16'>
+
+      <!--a-icons /-->
+      <link rel='apple-touch-icon' href='/assets/a-icons/icon-iphone.png' sizes='60x60'>
+      <link rel='apple-touch-icon' href='/assets/a-icons/icon-ipad.png' sizes='76x76'>
+      <link rel='apple-touch-icon' href='/assets/a-icons/icon-iphone@2x.png' sizes='120x120'>
+      <link rel='apple-touch-icon' href='/assets/a-icons/icon-ipad@2x.png' sizes='152x152'>
+
+      <!--generated /-->
+   </head>
+
+   <body class='app-body theme-{{ themeType }}' id='xnode-web'>
+
+      <!--header /-->
+      <header class='app-header {% if pageClass=="homepage" %}mod-hero{% endif %}' data-js='app-header'>
+         {% block header %}{% endblock %}
+         {% include 'elements/carcass/main-navbar/main-navbar.njk' %}
+      </header>
+      <!--/ header-->
+
+      <!--content /-->
+      <main class='app-content {% if pageClass=="errors" %}mod-spec{% endif %}'>
+         {% block content %}{% endblock %}
+      </main>
+      <!--/ content-->
+
+      <!--footer /-->
+      <footer class='app-footer'>
+         {% block footer %}{% endblock %}
+         <div class='section'>
+            {% include 'elements/carcass/main-footer/main-footer.njk' %}
+         </div>
+      </footer>
+      <!--/ footer-->
+
+      <!--overlay /-->
+      <div class='app-overlay' data-js='app-overlay'>
+         {% block overlay %}{% endblock %}
+      </div>
+      <!--/ overlay-->
+
+      <!--scripts /-->
+      <script type='module' src='/src/scripts.js'></script>
+
+   </body>
+</html>

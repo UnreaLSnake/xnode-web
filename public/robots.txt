@@ -1,0 +1,13 @@
+# robotstxt.org
+
+User-agent: *
+Allow: /
+Disallow: /preview/
+Disallow: /search*
+Disallow: /offline*
+Disallow: /error-404/
+Clean-param: etext
+Clean-param: q
+Clean-param: utm_source
+
+Sitemap: https://sitename.com/sitemap.xml

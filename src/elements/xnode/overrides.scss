@@ -1,0 +1,13 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- hystmodal                                        -- //
+.hystmodal {
+   z-index: 1000 !important;
+
+   &::before {
+      background-color: var(--color-overlay);
+      opacity: 1;
+      backdrop-filter: blur(4px);
+   }
+}

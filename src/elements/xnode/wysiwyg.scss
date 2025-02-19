@@ -1,0 +1,131 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- basics                                           -- //
+.wysiwyg {
+
+   & > *:first-child {
+      margin-top: 0;
+   }
+}
+
+// -- headers                                          -- //
+.wysiwyg {
+
+   h2,
+   h3,
+   h4 {
+      font-family: var(--font-family-title);
+      line-height: var(--line-height-title);
+      font-weight: $fweight-head-bold;
+      color: var(--color-title);
+   }
+
+   h2 {
+      margin-top: 8px;
+      font-size: var(--font-size-head-3);
+
+      & + h3 {
+         margin-top: 20px;
+      }
+   }
+
+   h3 {
+      margin-top: 32px;
+      font-size: var(--font-size-head-3);
+
+      & + h4 {
+         margin-top: 20px;
+      }
+   }
+
+   h4 {
+      margin-top: 28px;
+      font-size: var(--font-size-head-4);
+   }
+}
+
+// -- paragraph                                        -- //
+.wysiwyg {
+
+   p {
+      margin-top: 12px;
+
+      & + & {
+         margin-top: 16px;
+      }
+
+      & + ul,
+      & + ol {
+         margin-top: 4px;
+      }
+
+      & > img {
+         margin-top: 8px;
+      }
+   }
+}
+
+// -- lists                                            -- //
+.wysiwyg {
+
+   ul,
+   ol {
+      margin-top: 12px;
+
+      & + p,
+      & + ul,
+      & + ol {
+         margin-top: 16px;
+      }
+
+      & > li {
+         position: relative;
+         padding-left: 24px;
+      }
+   }
+
+   ul li::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      display: flex;
+      width: 5px;
+      height: 5px;
+      background-color: var(--color-gray-05);
+      border-radius: 50%;
+   }
+
+   ol {
+      counter-reset: myCounter;
+
+      li::before {
+         counter-increment: myCounter;
+         content: counter(myCounter) '.';
+         position: absolute;
+         top: 0;
+         left: 4px;
+         font-weight: $fweight-main-bold;
+      }
+   }
+}
+
+// -- inners                                           -- //
+.wysiwyg {
+
+   a {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: $trans-text;
+
+      @include hover {
+         color: var(--color-text);
+      }
+   }
+
+   img {
+      @extend .image !optional;
+   }
+}

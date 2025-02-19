@@ -1,0 +1,45 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+@use '/src/elements/xnode/queries' as *;
+
+// -- header                                           -- //
+.header {
+   display: flex;
+   flex-direction: column;
+}
+
+.header__title {
+   display: flex;
+   align-items: center;
+   font-family: var(--font-family-title);
+   line-height: var(--line-height-title);
+   font-size: var(--font-size-head-1);
+   font-weight: $fweight-head-bold;
+   color: var(--color-title);
+   letter-spacing: $lspacing-head;
+
+   svg {
+      display: inline-flex;
+      width: 44px;
+      height: 20px;
+
+      @include mq(lite-up) {
+         width: 55px;
+         height: 25px;
+      }
+   }
+}
+
+.header__desc {
+   margin-top: 20px;
+
+   strong {
+      color: var(--color-black);
+   }
+}
+
+// -- images                                           -- //
+.image {
+   object-fit: cover;
+   background-color: rgba(0, 0, 0, 0.1);
+}

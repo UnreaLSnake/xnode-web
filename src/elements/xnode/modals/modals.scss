@@ -1,0 +1,102 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- basics                                           -- //
+.modal {
+   display: flex;
+   flex-direction: column;
+   width: 100% !important;
+   border-top: 3px solid var(--color-accent);
+   border-radius: $radius-mini;
+
+   // &.mod-media {
+   //    max-width: 840px !important;
+   // }
+}
+
+// -- header                                           -- //
+.modal__header {
+   margin-bottom: 36px;
+}
+
+.modal__title {
+   font-family: var(--font-family-title);
+   line-height: var(--line-height-title);
+   font-size: var(--font-size-head-3);
+   font-weight: $fweight-head-bold;
+   color: var(--color-title);
+   text-transform: uppercase;
+}
+
+.modal__desc {
+   margin-top: 12px;
+}
+
+// -- content                                          -- //
+.modal__content {
+   overflow: hidden;
+   display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+   row-gap: 20px;
+   border-radius: $radius-base;
+}
+
+.modal__item {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   align-items: flex-start;
+   justify-content: flex-end;
+   row-gap: 8px;
+
+   &:last-of-type {
+      margin-top: 8px;
+      padding-top: 28px;
+      border-top: 1px dashed var(--color-gray-03);
+   }
+}
+
+.modal__label {
+   order: -1;
+   height: 20px;
+   font-weight: $fweight-main-bold;
+   font-size: var(--font-size-hint);
+   cursor: text;
+   transition: $trans-main;
+}
+
+// -- action                                           -- //
+.modal__action {
+   width: 144px;
+}
+
+.modal__hint {
+   margin-top: 12px;
+   font-size: var(--font-size-nano);
+   color: var(--color-gray-05);
+}
+
+// -- close                                            -- //
+.modal__close {
+   position: absolute;
+   top: -3px;
+   right: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: $button-base;
+   height: $button-base;
+   background-color: var(--color-accent);
+   border-radius: 0 $radius-mini 0 $radius-mini;
+   transition: $trans-main;
+
+   @include hover {
+      background-color: var(--color-accent-hover);
+   }
+
+   svg {
+      width: 26px;
+      height: 26px;
+   }
+}

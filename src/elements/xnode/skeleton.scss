@@ -1,0 +1,243 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/queries' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- grids                                            -- //
+:root {
+   --grid-wrap: 1600px;
+   --grid-cols: repeat(4, 1fr);
+   --grid-gaps: 8px;
+
+   @include mq(mini-up) {
+      --grid-gaps: 12px;
+   }
+
+   @include mq(lite-up) {
+      --grid-cols: repeat(8, 1fr);
+      --grid-gaps: 16px;
+   }
+
+   @include mq(plus-up) {
+      --grid-gaps: 20px;
+   }
+
+   @include mq(full-up) {
+      --grid-cols: repeat(12, 1fr);
+      --grid-gaps: 24px;
+   }
+}
+
+// -- skeleton                                         -- //
+.app {
+   &-body {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      align-content: space-between;
+      min-height: 100vh;
+      min-height: calc(var(--vh, 1vh) * 100);
+      background-color: var(--color-body-bg);
+   }
+
+   &-header {
+      display: grid;
+      grid-template-columns: [wide-start] 1fr [main-start] minmax(0, var(--grid-wrap)) [main-end] 1fr [wide-end];
+
+      &.js-locked {
+         z-index: 2100;
+      }
+   }
+
+   &-content {
+      display: grid;
+      grid-template-columns: [wide-start] 1fr [main-start] minmax(0, var(--grid-wrap)) [main-end] 1fr [wide-end];
+      padding: 20px 0 64px;
+
+      @include mq(full-up) {
+         padding-bottom: 72px;
+      }
+
+      &.mod-spec {
+         padding: 0;
+      }
+   }
+
+   &-footer {
+      display: grid;
+      grid-template-columns: [wide-start] 1fr [main-start] minmax(0, var(--grid-wrap)) [main-end] 1fr [wide-end];
+   }
+
+   &-overlay__bground {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2000;
+      background-color: var(--color-overlay);
+      backdrop-filter: blur(4px);
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+
+      &.is-enabled {
+         animation-name: app-overlay--active;
+         animation-duration: 0.5s;
+      }
+
+      &.is-disabled {
+         animation-name: app-overlay--disable;
+         animation-duration: 0.4s;
+      }
+   }
+}
+
+// -- section                                          -- //
+.wrapper {
+   display: grid;
+   grid-column: wide;
+   grid-template-columns: [wide-start] 1fr [main-start] minmax(0, var(--grid-wrap)) [main-end] 1fr [wide-end];
+}
+
+.section {
+   @extend .wrapper;
+   background-size: cover;
+   background-repeat: no-repeat;
+   @include grid-outer;
+}
+
+// -- basic                                            -- //
+.basic-group {
+   grid-column: main;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   column-gap: 24px;
+
+   @include mq(plus-up) {
+      grid-template-columns: repeat(10, 1fr);
+   }
+
+   @include mq(full-up) {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 32px;
+   }
+
+   @include mq(mega-up) {
+      grid-template-columns: repeat(14, 1fr);
+   }
+}
+
+.basic-group__page {
+   @include mq(plus-up) {
+      grid-column: 4 / span 7;
+   }
+
+   @include mq(full-up) {
+      grid-column: 4 / span 9;
+   }
+
+   @include mq(mega-up) {
+      grid-column: 4 / span 11;
+   }
+}
+
+.basic-group__aside {
+   order: -1;
+
+   @include mq(plus-up) {
+      grid-column: 1 / span 3;
+   }
+}
+
+// -- content                                          -- //
+.content-group {
+   grid-column: main;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   column-gap: 24px;
+   row-gap: 32px;
+
+   @include mq(plus-up) {
+      grid-template-columns: repeat(11, 1fr);
+   }
+
+   @include mq(full-up) {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 32px;
+   }
+
+   @include mq(mega-up) {
+      grid-template-columns: repeat(14, 1fr);
+   }
+}
+
+.content-group__main {
+   @include mq(plus-up) {
+      grid-column: 1 / span 7;
+   }
+
+   @include mq(full-up) {
+      grid-column: 1 / span 8;
+   }
+
+   @include mq(mega-up) {
+      grid-column: 1 / span 10;
+   }
+}
+
+.content-group__aside {
+   @include mq(plus-up) {
+      padding-left: 8px;
+      grid-column: 8 / span 4;
+   }
+
+   @include mq(full-up) {
+      grid-column: 9 / span 4;
+   }
+
+   @include mq(mega-up) {
+      grid-column: 11 / span 4;
+   }
+}
+
+// -- module                                           -- //
+.module {
+   grid-column: main;
+}
+
+.bcrumbs-module {
+   grid-column: main;
+   margin: -2px 0 21px;
+}
+
+// -- animation                                        -- //
+@keyframes app-overlay--active {
+   0% {
+      opacity: 0;
+      transform: translateX(-200vw);
+   }
+
+   1% {
+      opacity: 0;
+      transform: translateX(0);
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes app-overlay--disable {
+   0% {
+      opacity: 1;
+   }
+
+   99% {
+      opacity: 0;
+      transform: translateX(0);
+   }
+
+   100% {
+      opacity: 0;
+      transform: translateX(-200vw);
+   }
+}

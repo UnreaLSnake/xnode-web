@@ -1,0 +1,126 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/queries' as *;
+
+// -- outer                                            -- //
+@mixin grid-outer {
+   padding: 0 12px;
+
+   @include mq(mini-up) {
+      padding: 0 16px;
+   }
+
+   @include mq(lite-up) {
+      padding: 0 20px;
+   }
+
+   @include mq(full-up) {
+      padding: 0 28px;
+   }
+
+   @include mq(wide-up) {
+      padding: 0 36px;
+   }
+}
+
+// -- hover                                            -- //
+@mixin hover() {
+
+   @media screen and (hover: hover) {
+      &:hover {
+         @content;
+      }
+   }
+}
+
+// -- focus                                            -- //
+@mixin focus() {
+
+   &:focus,
+   &:active {
+      @content;
+   }
+}
+
+@mixin focus-only() {
+
+   &:focus {
+      @content;
+   }
+}
+
+// -- active                                           -- //
+@mixin active-only() {
+
+   &:active {
+      @content;
+   }
+}
+
+// -- print                                            -- //
+@include mq(print) {
+
+   *,
+   *::before,
+   *::after {
+      text-shadow: none !important;
+      background: rgba(0, 0, 0, 0) !important;
+      box-shadow: none !important;
+   }
+
+   a,
+   a:visited {
+      text-decoration: underline;
+   }
+
+   a[href]::after {
+      content: ' (' attr(href) ')';
+   }
+
+   a[href^='#']::after {
+      content: '';
+   }
+
+   abbr[title]::after {
+      content: ' (' attr(title) ')';
+   }
+
+   pre {
+      white-space: pre-wrap !important;
+   }
+
+   blockquote,
+   pre {
+      border: 1px solid #999999;
+      page-break-inside: avoid;
+   }
+
+   thead {
+      display: table-header-group;
+   }
+
+   img,
+   tr {
+      page-break-inside: avoid;
+   }
+
+   h2,
+   h3,
+   p {
+      orphans: 3;
+      widows: 3;
+   }
+
+   h2,
+   h3 {
+      page-break-after: avoid;
+   }
+
+   table {
+      border-collapse: collapse !important;
+
+      th,
+      td {
+         background-color: #FFFFFF !important;
+      }
+   }
+}

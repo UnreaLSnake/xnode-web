@@ -1,0 +1,23 @@
+/* -- Based on X-Node Web (xnode.site) -- @license MIT -- */
+
+// -- baseline                                         -- //
+@use '/src/elements/xnode/app-core';
+@use '/src/elements/xnode/reset';
+@use '/src/elements/xnode/overrides';
+@use '/src/elements/xnode/fonts';
+@use '/src/elements/xnode/skeleton';
+@use '/src/elements/xnode/wysiwyg';
+
+@use '/src/elements/xnode/headers/headers/' as *;
+@use '/src/elements/xnode/icons/icons/' as *;
+@use '/src/elements/xnode/buttons/buttons' as *;
+@use '/src/elements/xnode/inputs/inputs' as *;
+@use '/src/elements/xnode/checks/checks' as *;
+@use '/src/elements/xnode/modals/modals' as *;
+
+
+// -- carcass                                          -- //
+// @use '/src/elements/carcass/module-name/module-name';
+
+// -- content                                          -- //
+// @use '/src/elements/content/module-name/module-name';

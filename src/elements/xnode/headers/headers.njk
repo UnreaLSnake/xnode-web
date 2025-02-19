@@ -1,0 +1,31 @@
+{% macro header (extClass, blockType, titleData, descData, descExtra, blockMod, blockData) %}
+   {% if blockType == 'div' %}
+
+      <div class='{{ extClass }} header {{ blockMod }}' {{ blockData }}>
+         <h2 class='header__title'>{{ titleData | safe }}</h2>
+
+         {% if descData %}
+            <p class='header__desc'>{{ descData | safe }}</p>
+         {% endif %}
+
+         {% if descExtra %}
+            <p class='header__desc'>{{ descExtra | safe }}</p>
+         {% endif %}
+      </div>
+
+   {% else %}
+
+      <header class='{{ extClass }} header {{ blockMod }}' {{ blockData }}>
+         <h2 class='header__title'>{{ titleData | safe }}</h2>
+
+         {% if descData %}
+            <p class='header__desc'>{{ descData | safe }}</p>
+         {% endif %}
+
+         {% if descExtra %}
+            <p class='header__desc'>{{ descExtra | safe }}</p>
+         {% endif %}
+      </header>
+
+   {% endif %}
+{% endmacro %}

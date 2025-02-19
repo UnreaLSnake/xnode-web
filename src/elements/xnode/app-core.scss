@@ -1,0 +1,54 @@
+// convert PX to VW
+@function vw($target) {
+   $vw-context: (
+      $media-mega * 0.01) * 1px;
+   @return ($target / $vw-context) * 1vw;
+}
+
+// scroll locking
+.js-locked {
+   overflow: hidden !important;
+
+   @at-root body.js-locked {
+      position: fixed;
+      width: 100%;
+   }
+}
+
+// hide element
+.is-hidden {
+   visibility: hidden !important;
+   width: 0 !important;
+   height: 0 !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   font-size: 0 !important;
+}
+
+// link for cards
+.block-link {
+   font-size: 0;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 200;
+      background-color: transparent;
+      pointer-events: auto;
+   }
+}
+
+// only for reader
+[data-reader] {
+   overflow: hidden !important;
+   position: absolute !important;
+   width: 1px !important;
+   height: 1px !important;
+   padding: 0 !important;
+   white-space: nowrap !important;
+   border: 0 !important;
+}

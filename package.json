@@ -1,0 +1,52 @@
+{
+  "name": "xnode-web",
+  "version": "0.5.0",
+  "type": "module",
+  "description": "Minimalistic starter kit for responsive web-projects",
+  "keywords": [
+    "nunjucks",
+    "scss",
+    "mobile-first",
+    "responsive",
+    "frontend",
+    "web",
+    "starter-kit"
+  ],
+  "author": {
+    "name": "Alexander aka UnreaLSnake",
+    "email": "mail@xnode.site",
+    "url": "https://xnode.site"
+  },
+  "license": "MIT",
+  "homepage": "https://xnode.site/starter-kit/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnreaLSnake/xnode-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UnreaLSnake/xnode-web/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@vituum/vite-plugin-nunjucks": "^1.1.0",
+    "sass": "^1.83.4",
+    "sass-embedded": "^1.83.4",
+    "vituum": "^1.1.1"
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Firefox ESR",
+    "iOS >= 12",
+    "Safari >= 12",
+    "not Explorer <= 11"
+  ]
+}

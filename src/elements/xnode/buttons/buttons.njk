@@ -1,0 +1,41 @@
+{% macro button (extClass, buttonType, buttonMods, buttonName, buttonLink, buttonTitle, blockData, iconName) %}
+   {% if buttonType == 'button' %}
+
+      <button
+         class='{{ extClass }} button-{{ buttonMods }}'
+         type='button' {% if buttonTitle %}title='{{ buttonTitle }}'{% endif %} {{ blockData }}
+      >
+
+         {% if iconName %}
+            <i class='icon-{{ iconName }}'></i>
+         {% endif %}
+
+         {% if buttonMods == 'icon' %}
+            <span data-reader>{{ buttonName | safe }}</span>
+         {% else %}
+            <span>{{ buttonName | safe }}</span>
+         {% endif %}
+
+      </button>
+
+   {% elif buttonType == 'link' %}
+
+      <a
+         class='{{ extClass }} button-{{ buttonMods }}'
+         href='{{ buttonLink }}' {% if buttonTitle %}title='{{ buttonTitle }}'{% endif %} {{ blockData }}
+      >
+
+         {% if iconName %}
+            <i class='icon-{{ iconName }}'></i>
+         {% endif %}
+
+         {% if buttonMods == 'icon' %}
+            <span data-reader>{{ buttonName | safe }}</span>
+         {% else %}
+            <span>{{ buttonName | safe }}</span>
+         {% endif %}
+
+      </a>
+
+   {% endif %}
+{% endmacro %}

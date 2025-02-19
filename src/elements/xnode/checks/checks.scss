@@ -1,0 +1,107 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- basics                                           -- //
+.check {
+   position: relative;
+   display: inline-flex;
+
+   &:hover,
+   &:focus,
+   &:active {
+      cursor: pointer;
+
+      .check__input:not([disabled]) {
+         & ~ .check__title {
+            color: var(--color-accent);
+
+            &::before {
+               border-color: var(--color-accent);
+            }
+
+            &::after {
+               color: var(--color-text);
+            }
+         }
+      }
+
+      .check__input:not([disabled]):checked {
+         & ~ .check__title {
+            &::before {
+               border-color: var(--color-accent);
+            }
+         }
+      }
+   }
+}
+
+// -- title                                            -- //
+.check__title {
+   position: relative;
+   display: flex;
+   min-height: $check-height;
+   padding-left: ($check-height + 12px);
+   font-family: var(--font-family-title);
+   color: var(--color-title);
+   transition: $trans-text;
+
+   &::before,
+   &::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 0;
+      display: flex;
+      width: $check-width;
+      height: $check-height;
+      transition: $trans-text;
+   }
+
+   &::before {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-gray-04);
+      border-radius: $radius-mini;
+   }
+
+   &::after {
+      text-align: center;
+   }
+}
+
+// -- input                                            -- //
+.check__input {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -10;
+   opacity: 0;
+}
+
+// -- states                                           -- //
+.check__input:checked {
+   & + .check__title::before {
+      border-color: var(--color-accent);
+   }
+
+   & + .check__title::after {
+      // @extend .icon-check;
+
+      top: 3px;
+      left: 2px;
+      width: 12px;
+      height: 12px;
+      background-size: 12px 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+}
+
+.check__input:disabled {
+   & ~ .check__title {
+      opacity: 0.5;
+
+      @include hover {
+         cursor: default;
+      }
+   }
+}

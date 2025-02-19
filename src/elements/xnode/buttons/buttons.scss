@@ -1,0 +1,60 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+@use '/src/elements/xnode/queries' as *;
+
+@use '/src/elements/xnode/icons/icons/' as *;
+
+// -- basics                                           -- //
+[class*='button-'] {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   height: $button-base;
+   white-space: nowrap;
+   font-family: var(--font-family-title);
+   font-size: var(--font-size-hint);
+   font-weight: $fweight-head-bold;
+   border-radius: $radius-mini;
+   transition: $trans-main;
+   cursor: pointer;
+
+   @include icon {
+      width: $button-base;
+   }
+
+   &.mod-plus {
+      height: 46px;
+      font-size: (var(--font-size-desc) - 2px);
+
+      @include mq(lite-up) {
+         height: $button-plus;
+         font-size: var(--font-size-desc);
+      }
+   }
+}
+
+// -- main                                             -- //
+.button-main {
+
+   @include hover {}
+
+   &.mod-plus {}
+}
+
+// -- extra                                            -- //
+.button-extra {
+
+   @include hover {}
+}
+
+// -- aux                                              -- //
+.button-aux {
+
+   @include hover {}
+}
+
+// -- spec                                             -- //
+.button-spec {
+
+   @include hover {}
+}

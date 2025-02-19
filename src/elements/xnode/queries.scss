@@ -1,0 +1,297 @@
+@use '/src/elements/xnode/config' as *;
+
+// -- queries                                          -- //
+@mixin mq($value) {
+
+   // base
+   @if $value ==base {
+      @media (max-width: ($media-nano - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-nano {
+      @media (max-width: ($media-mini - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-mini {
+      @media (max-width: ($media-lite - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-lite {
+      @media (max-width: ($media-plus - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-plus {
+      @media (max-width: ($media-full - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-full {
+      @media (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-wide {
+      @media (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==base-mega {
+      @media (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // nano
+   @else if $value ==nano-up {
+      @media (min-width: $media-nano) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano {
+      @media (min-width: $media-nano) and (max-width: ($media-mini - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-mini {
+      @media (min-width: $media-nano) and (max-width: ($media-lite - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-lite {
+      @media (min-width: $media-nano) and (max-width: ($media-plus - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-plus {
+      @media (min-width: $media-nano) and (max-width: ($media-full - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-full {
+      @media (min-width: $media-nano) and (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-wide {
+      @media (min-width: $media-nano) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==nano-mega {
+      @media (min-width: $media-nano) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // mini
+   @else if $value ==mini-up {
+      @media (min-width: $media-mini) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini {
+      @media (min-width: $media-mini) and (max-width: ($media-lite - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini-lite {
+      @media (min-width: $media-mini) and (max-width: ($media-plus - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini-plus {
+      @media (min-width: $media-mini) and (max-width: ($media-full - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini-full {
+      @media (min-width: $media-mini) and (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini-wide {
+      @media (min-width: $media-mini) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==mini-mega {
+      @media (min-width: $media-mini) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // lite
+   @else if $value ==lite-up {
+      @media (min-width: $media-lite) {
+         @content;
+      }
+   }
+
+   @else if $value ==lite {
+      @media (min-width: $media-lite) and (max-width: ($media-plus - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==lite-plus {
+      @media (min-width: $media-lite) and (max-width: ($media-full - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==lite-full {
+      @media (min-width: $media-lite) and (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==lite-wide {
+      @media (min-width: $media-lite) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==lite-mega {
+      @media (min-width: $media-lite) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // plus
+   @else if $value ==plus-up {
+      @media (min-width: $media-plus) {
+         @content;
+      }
+   }
+
+   @else if $value ==plus {
+      @media (min-width: $media-plus) and (max-width: ($media-full - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==plus-full {
+      @media (min-width: $media-plus) and (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==plus-wide {
+      @media (min-width: $media-plus) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==plus-mega {
+      @media (min-width: $media-plus) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // full
+   @else if $value ==full-up {
+      @media (min-width: $media-full) {
+         @content;
+      }
+   }
+
+   @else if $value ==full {
+      @media (min-width: $media-full) and (max-width: ($media-wide - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==full-wide {
+      @media (min-width: $media-full) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==full-mega {
+      @media (min-width: $media-full) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // wide
+   @else if $value ==wide-up {
+      @media (min-width: $media-wide) {
+         @content;
+      }
+   }
+
+   @else if $value ==wide {
+      @media (min-width: $media-wide) and (max-width: ($media-mega - 0.02px)) {
+         @content;
+      }
+   }
+
+   @else if $value ==wide-mega {
+      @media (min-width: $media-wide) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // mega
+   @else if $value ==mega-up {
+      @media (min-width: $media-mega) {
+         @content;
+      }
+   }
+
+   @else if $value ==mega {
+      @media (min-width: $media-mega) and (max-width: ($media-over - 0.02px)) {
+         @content;
+      }
+   }
+
+   // over
+   @else if $value ==over-up {
+      @media (min-width: $media-over) {
+         @content;
+      }
+   }
+
+   // hidpi
+   @else if $value ==hidpi {
+      @media (min-resolution: 2dppx) {
+         @content;
+      }
+   }
+
+   // print
+   @else if $value ==print {
+      @media print {
+         @content;
+      }
+   }
+
+   // error
+   @else {
+      @warn "Error: $$breakpoint}";
+   }
+}

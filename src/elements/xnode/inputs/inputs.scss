@@ -1,0 +1,36 @@
+@use '/src/elements/xnode/config' as *;
+@use '/src/elements/xnode/mixins' as *;
+
+// -- basics                                           -- //
+.input {
+   display: inline-flex;
+   width: 100%;
+   height: $input-base;
+   padding: 0 12px;
+   white-space: nowrap;
+   font-family: var(--font-family-title);
+   font-size: var(--font-size-main);
+   color: var(--color-gray-05);
+   background-color: transparent;
+   border: 1px solid var(--color-gray-03);
+   border-radius: $radius-mini;
+   transition: $trans-main;
+
+   &::placeholder {
+      font-size: 0;
+   }
+
+   @include hover {
+      border-color: var(--color-accent);
+   }
+
+   @include focus {
+      color: var(--color-text);
+      border-color: var(--color-accent);
+   }
+
+   &[disabled='disabled'],
+   &[disabled] {
+      opacity: 0.5;
+   }
+}

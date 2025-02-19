@@ -1,0 +1,58 @@
+# git-scm.com/docs/gitattributes
+* text eol=lf
+
+# source
+*.html           text
+*.njk            text
+*.css            text
+*.scss           text
+
+*.map            binary
+*.js             text
+*.json           text
+*.php            text
+
+*.tpl            text
+*.xml            text
+*.yml            text
+*.sql            text
+
+# configs
+.gitattributes   text
+.gitignore       text
+.gitconfig       text
+*.npmignore      text
+
+.editorconfig    text
+.stylelintrc     text
+*.lock           text
+.htaccess        text
+
+# media
+*.svg            text
+*.jpg            binary
+*.png            binary
+*.gif            binary
+*.webp           binary
+
+*.mp3            binary
+*.m4a            binary
+*.ogg            binary
+*.mp4            binary
+*.webm           binary
+
+# other
+*.txt            text
+*.md             text
+*.pdf            binary
+*.webmanifest    text
+
+*.ttf            binary
+*.otf            binary
+*.woff           binary
+*.woff2          binary
+
+*.zip            binary
+*.7z             binary
+*.gz             binary
+*.tar            binary

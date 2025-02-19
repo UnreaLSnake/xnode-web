@@ -1,0 +1,31 @@
+# gitignore.io
+*--xt*
+archive
+node_modules
+npm-debug.log
+webapp
+*.diff
+*.err
+*.log
+/.vscode/
+
+# linux
+*~
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+
+# macos
+.AppleDouble
+.DS_Store
+.LSOverride
+._*
+Icon
+
+# windows
+*.lnk
+*.stackdump
+[Dd]esktop.ini
+ehthumbs.db
+Thumbs.db
