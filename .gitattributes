@@ -9,6 +9,7 @@
 
 *.map            binary
 *.js             text
+*.ts             text
 *.json           text
 *.php            text
 

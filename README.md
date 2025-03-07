@@ -1,6 +1,8 @@
 # X-Node Web Starter Kit
 
-Is a boilerplate to quickly start developing an responsive, mobile-first websites. Built on the Nunjucks and Sass preprocessor with SCSS syntax, using a fully modular structure with BEM-style naming.
+Is a boilerplate to quickly start developing an responsive, mobile-first websites. Built on the Vituum with Nunjucks and Sass preprocessor with SCSS syntax, using a fully modular structure with BEM-style naming.
+
+---
 
 ## #1. Installing
 
@@ -9,29 +11,76 @@ Step 2. Download and install latest stable version of [Yarn](https://yarnpkg.com
 Step 3. Open project folder in terminal and enter the `yarn install` command.  
 Step 4. Preparation complete! You can start working with the project :)
 
+---
+
 ## #2. Structure
 
 ```
 .
-├─ archive
+├─ 📁 archive
 |  └─ .. files without repository sync
-├─ backend
-|  └─ .. tpls and files for CMS
-├─ public
-|  └─ .. static files
-├─ src
-|  └─ .. pages, libs, elements, etc
-├─ webapp
+├─ 📁 public
+|  ├─ 📁 assets
+|  |  ├─ 📁 a-icons
+|  |  ├─ 📁 og-image
+|  |  └─ 📄 app.webmanifest
+|  ├─ 📄 .htaccess
+|  ├─ 📄 robots.txt
+|  └─ 📄 sitemap.xml
+├─ 📁 src
+|  ├─ 📁 assets
+|  |  ├─ 📁 decors
+|  |  |  └─ .. files used in styles
+|  |  ├─ 📁 files
+|  |  |  └─ .. files for download
+|  |  ├─ 📁 fonts
+|  |  |  └─ .. font in .woff2 and .svg
+|  |  ├─ 📁 images
+|  |  |  └─ .. content images
+|  |  └─ 📁 video
+|  |     └─ .. content video
+|  ├─ 📁 baseline
+|  |  ├─ 📁 Buttons
+|  |  ├─ 📁 Checks
+|  |  ├─ 📁 Effects
+|  |  ├─ 📁 Headers
+|  |  ├─ 📁 Icons
+|  |  ├─ 📁 Inputs
+|  |  ├─ 📁 Modals
+|  |  ├─ 📄 app-core.scss
+|  |  ├─ 📄 fonts.scss
+|  |  ├─ 📄 functions.scss
+|  |  ├─ 📄 groups.scss
+|  |  ├─ 📄 helpers.scss
+|  |  ├─ 📄 mixins.scss
+|  |  ├─ 📄 overrides.scss
+|  |  ├─ 📄 queries.scss
+|  |  ├─ 📄 sections.scss
+|  |  ├─ 📄 skeleton.scss
+|  |  └─ 📄 wysiwyg.scss
+|  ├─ 📁 emails
+|  |  └─ .. email template files
+|  ├─ 📁 layouts
+|  |  ├─ 📄 default.njk
+|  |  └─ .. nunjucks layout files
+|  ├─ 📁 modules
+|  |  └─ .. components in .njk, .scss, .js
+|  ├─ 📁 pages
+|  |  └─ .. all pages for projects as .njk
+|  ├─ 📄 scripts.js
+|  └─ 📄 styles.scss
+├─ 📁 webapp
 |  └─ .. compiled project
-├─ .editorconfig
-├─ .gitattributes
-├─ .gitignore
-├─ .stylintrc
-├─ package.json
-├─ readme.md
-├─ vite.config.js
-└─ yarn.lock
+├─ 📄 .editorconfig
+├─ 📄 .gitattributes
+├─ 📄 .gitignore
+├─ 📄 package.json
+├─ 📄 README.md
+├─ 📄 vite.config.js
+└─ 📄 yarn.lock
 ```
+
+---
 
 ## #3. Command line
 
@@ -42,6 +91,8 @@ Step 4. Preparation complete! You can start working with the project :)
 `npm run preview` – preview from `webapp` folder
 
 Default browser for preview launching: `Firefox`
+
+---
 
 ## #4. Media queries
 
@@ -112,6 +163,8 @@ Default browser for preview launching: `Firefox`
 -  then all interval rules
 -  then all other rules (print, etc)
 
+---
+
 ## #5. Helpers
 
 ### Classes
@@ -119,6 +172,7 @@ Default browser for preview launching: `Firefox`
 `js-locked` – disabling scroll in block  
 `is-hidden` – fully hide an element  
 `block-link` – absolute positioning
+`image` - object-fit 'cover' and bground
 
 ### Data
 
@@ -131,7 +185,9 @@ Default browser for preview launching: `Firefox`
 `@include focus-only {}` – adds only focus
 `@include active-only {}` – adds only active
 
-## #6. Copyrights
+---
+
+## #6. Copyright
 
 © 2016–2025, Under the MIT License  
 [https://xnode.site/](https://xnode.site/)

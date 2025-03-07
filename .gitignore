@@ -1,5 +1,5 @@
 # gitignore.io
-*--xt*
+*_XT*
 archive
 node_modules
 npm-debug.log
@@ -16,16 +16,16 @@ webapp
 .nfs*
 .Trash-*
 
-# macos
-.AppleDouble
-.DS_Store
-.LSOverride
-._*
-Icon
-
 # windows
 *.lnk
 *.stackdump
 [Dd]esktop.ini
 ehthumbs.db
 Thumbs.db
+
+# macos
+.AppleDouble
+.DS_Store
+.LSOverride
+._*
+Icon
