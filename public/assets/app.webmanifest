@@ -1,0 +1,21 @@
+{
+  "name": "X-Node Starter Kit",
+  "short_name": "X-Node Web",
+  "description": "Minimalistic starter kit for responsive web-projects",
+  "icons": [
+    {
+      "src": "https://domain.com/assets/a-icons/brand-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://domain.com/assets/a-icons/brand-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "display": "browser",
+  "theme_color": "#7119E7",
+  "background_color": "#000000"
+}
