@@ -2,10 +2,10 @@
 
 User-agent: *
 Allow: /
-Disallow: /preview/
+Disallow: /preview/*
 Disallow: /search*
 Disallow: /offline*
-Disallow: /error-404/
+Disallow: /error*
 Clean-param: etext
 Clean-param: q
 Clean-param: utm_source
