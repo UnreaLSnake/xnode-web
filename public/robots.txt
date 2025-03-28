@@ -10,4 +10,4 @@ Clean-param: etext
 Clean-param: q
 Clean-param: utm_source
 
-Sitemap: https://sitename.com/sitemap.xml
+Sitemap: https://domain.com/sitemap.xml
